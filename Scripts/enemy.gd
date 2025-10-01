@@ -1,4 +1,4 @@
-extends CharacterBody2D
+@abstract extends CharacterBody2D
 
 @export var enemy_initial_hp := 100
 @export var enemy_max_hp := enemy_initial_hp
@@ -10,4 +10,7 @@ func _ready() -> void:
 	hpcomponent.set_current_hp(enemy_current_hp)
 
 func _process(delta: float) -> void:
+	enemy_ai()
 	move_and_slide()
+
+@abstract func enemy_ai() -> void
