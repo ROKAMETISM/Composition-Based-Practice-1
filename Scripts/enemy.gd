@@ -3,6 +3,7 @@
 @export var enemy_initial_hp := 100
 @export var enemy_max_hp := enemy_initial_hp
 @export var enemy_current_hp := enemy_max_hp
+var player
 
 func _ready() -> void:
 	var hpcomponent = $HPComponent

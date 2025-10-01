@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://caddm2xg1h58j"]
+[gd_scene load_steps=4 format=3 uid="uid://caddm2xg1h58j"]
 
 [ext_resource type="PackedScene" uid="uid://cpqmkss44wd6f" path="res://Scenes/enemy.tscn" id="1_fmjxd"]
+[ext_resource type="Script" uid="uid://hminf4gsnmac" path="res://Scripts/enemy_slow.gd" id="2_113vh"]
+[ext_resource type="Texture2D" uid="uid://w2co4loj05rh" path="res://Sprites/sprite_enemy_slow_simple.png" id="2_bl1i5"]
 
 [node name="EnemySlow" instance=ExtResource("1_fmjxd")]
-script = null
+script = ExtResource("2_113vh")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_bl1i5")

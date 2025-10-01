@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dtiqh1xoxjvlq" path="res://Scripts/hp_component.gd" id="2_1f0kj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f0kj"]
+radius = 13.0
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_hghv2")
