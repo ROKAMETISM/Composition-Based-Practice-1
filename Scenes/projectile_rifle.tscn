@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://8uiavxnxidaj"]
+
+[ext_resource type="Texture2D" uid="uid://bfhkjyg8ojmp3" path="res://Sprites/sprite_projectile_rifle_simple.png" id="1_u3a4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3iq4"]
+size = Vector2(14, 6)
+
+[node name="ProjectileRifle" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_u3a4x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n3iq4")
