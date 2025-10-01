@@ -19,7 +19,8 @@ func init_timers() -> void:
 func _on_timer_timeout(enemy_type) -> void:
 	var enemy = enemy_type.instantiate()
 	var player_pos = player.global_position
-	var rand_vec = Vector2(randi_range(100, 200), 0).rotated(randf_range(0, 2*PI))
+	var spawn_distance_range = $EnemySpawndata.get_spawn_distance_range(enemy_type)
+	var rand_vec = Vector2(randi_range(spawn_distance_range.x, spawn_distance_range.y), 0).rotated(randf_range(0, 2*PI))
 	enemy.player = player
 	enemy.global_position = player_pos + rand_vec
 	get_parent().add_child(enemy)
