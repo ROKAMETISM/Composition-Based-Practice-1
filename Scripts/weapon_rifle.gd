@@ -15,6 +15,5 @@ func update(delta : float) -> void:
 func fire_weapon() -> void:
 	var projectile = rifle_projectile.instantiate()
 	projectile.global_position = global_position
-	projectile.direction = direction
-	projectile.rotation = direction.angle()
+	projectile.rotation = rotation
 	get_tree().current_scene.add_child(projectile)
