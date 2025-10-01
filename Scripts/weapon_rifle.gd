@@ -20,3 +20,4 @@ func fire_weapon() -> void:
 	projectile.global_position = player.global_position
 	projectile.rotation = player.rotation
 	tree_current_scene.add_child(projectile)
+	#Todo : Implement auto-aim at closest enemy
