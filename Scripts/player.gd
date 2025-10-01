@@ -7,7 +7,8 @@ extends CharacterBody2D
 
 func _ready() -> void:
 	var hpcomponent = $HPComponent
-	hpcomponent.
+	hpcomponent.set_max_hp(player_max_hp)
+	hpcomponent.set_current_hp(player_current_hp)
 
 func _process(delta: float) -> void:
 	var input_vector = Vector2(int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left")), 
