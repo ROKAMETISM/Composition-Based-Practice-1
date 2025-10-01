@@ -5,6 +5,8 @@ class_name WeaponRifle
 @export var damage := 70
 var fire_timer := fire_interval
 var rifle_projectile = preload("res://Scenes/projectile_rifle.tscn")
+var tree_current_scene
+var player
 
 func update(delta : float) -> void:
 	fire_timer -= delta
@@ -13,7 +15,8 @@ func update(delta : float) -> void:
 		fire_weapon()
 
 func fire_weapon() -> void:
+	print("weapon fire called")
 	var projectile = rifle_projectile.instantiate()
-	projectile.global_position = global_position
-	projectile.rotation = rotation
-	get_tree().current_scene.add_child(projectile)
+	projectile.global_position = player.global_position
+	projectile.rotation = player.rotation
+	tree_current_scene.add_child(projectile)
