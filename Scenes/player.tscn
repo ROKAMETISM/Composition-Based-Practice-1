@@ -20,3 +20,5 @@ shape = SubResource("RectangleShape2D_6t5aa")
 [node name="HPComponent" type="Node" parent="."]
 script = ExtResource("3_6t5aa")
 metadata/_custom_type_script = "uid://dtiqh1xoxjvlq"
+
+[node name="Camera2D" type="Camera2D" parent="."]
