@@ -1,14 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://8uiavxnxidaj"]
+[gd_scene load_steps=5 format=3 uid="uid://8uiavxnxidaj"]
 
+[ext_resource type="Script" uid="uid://bf6bjt1ybnug5" path="res://Scripts/projectile_rifle.gd" id="1_n3iq4"]
 [ext_resource type="Texture2D" uid="uid://bfhkjyg8ojmp3" path="res://Sprites/sprite_projectile_rifle_simple.png" id="1_u3a4x"]
+[ext_resource type="Script" uid="uid://8haeqpc061cw" path="res://Scripts/damage_component.gd" id="3_fqvgl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3iq4"]
 size = Vector2(14, 6)
 
 [node name="ProjectileRifle" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_n3iq4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_u3a4x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n3iq4")
+
+[node name="DamageComponent" type="Node" parent="."]
+script = ExtResource("3_fqvgl")
+metadata/_custom_type_script = "uid://8haeqpc061cw"

@@ -4,7 +4,8 @@ class_name WeaponRifle
 @export var fire_interval := 0.2
 @export var damage := 70
 var fire_timer := fire_interval
-var rifle_projectile = preload("res://Scenes/projectile_rifle.tscn")
+const rifle_projectile = preload("res://Scenes/projectile_rifle.tscn")
+var projectile_speed := 600.0
 var tree_current_scene
 var player
 
@@ -18,6 +19,7 @@ func fire_weapon(closest_enemy) -> void:
 	print("weapon fire called")
 	var projectile = rifle_projectile.instantiate()
 	projectile.global_position = player.global_position
+	projectile.speed = projectile_speed
 	if closest_enemy:
 		projectile.rotation = (closest_enemy.global_position - player.global_position).angle()
 	else:
