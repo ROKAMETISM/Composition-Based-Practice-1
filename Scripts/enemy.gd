@@ -9,9 +9,13 @@ func _ready() -> void:
 	var hpcomponent = $HPComponent
 	hpcomponent.set_max_hp(enemy_max_hp)
 	hpcomponent.set_current_hp(enemy_current_hp)
+	hpcomponent.connect("died", _on_died)
 
 func _process(delta: float) -> void:
 	enemy_ai()
 	move_and_slide()
+
+func _on_died() -> void:
+	queue_free()
 
 @abstract func enemy_ai() -> void

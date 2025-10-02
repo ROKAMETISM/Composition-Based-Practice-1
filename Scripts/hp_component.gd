@@ -5,6 +5,7 @@ signal current_hp_changed(new_current_hp, hp_delta)
 signal max_hp_changed(new_max_hp, hp_delta)
 signal died
 
+
 var max_hp := 100
 var current_hp := 100
 
@@ -21,4 +22,5 @@ func set_current_hp(hp : int) -> void:
 func take_damage(damage : int) -> void:
 	current_hp -= damage
 	emit_signal("current_hp_changed", current_hp, -damage)
-	emit_signal("died")
+	if current_hp <= 0:
+		emit_signal("died")
