@@ -1,13 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpqmkss44wd6f"]
+[gd_scene load_steps=3 format=3 uid="uid://cpqmkss44wd6f"]
 
-[ext_resource type="Script" uid="uid://b57u100i2evi2" path="res://Scripts/enemy.gd" id="1_hghv2"]
 [ext_resource type="Script" uid="uid://dtiqh1xoxjvlq" path="res://Scripts/hp_component.gd" id="2_1f0kj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f0kj"]
 radius = 13.0
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemies"]]
-script = ExtResource("1_hghv2")
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
