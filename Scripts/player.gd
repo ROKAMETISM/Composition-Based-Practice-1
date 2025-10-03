@@ -25,8 +25,14 @@ func add_xp(xp_amount : int) -> void:
 	while current_xp >= xp_for_next_level:
 		current_xp -= xp_for_next_level
 		level_up()
-		xp_for_next_level += 1
 
 func level_up() -> void:
 	level += 1
+	xp_for_next_level += 1
 	print("Level up! current level : {lvl}".format({"lvl" : level}))
+	var copy = $WeaponManager.available_upgrades.duplicate()
+	copy.shuffle()
+	var picked_upgrades = copy.slice(0, 3)
+	var rand_num = randi_range(0, 3)
+	print("picked upgrades : " + str(picked_upgrades))
+	print("picked num : " + str(rand_num))
