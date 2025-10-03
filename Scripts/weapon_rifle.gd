@@ -1,14 +1,16 @@
 extends Node2D
 class_name WeaponRifle
 
+var weapon_name = "Rifle"
 @export var fire_interval := 0.2
-@export var damage := 70
 var fire_timer := fire_interval
 const rifle_projectile = preload("res://Scenes/projectile_rifle.tscn")
 var projectile_speed := 600.0
-var projectile_damage := 75
+@export var projectile_damage := 70
 var tree_current_scene
 var player
+
+var upgrades = {"Fire Rate" : 0, "Damage" : 0, "Projectile Speed" : 0}
 
 func update(delta : float, closest_enemy) -> void:
 	fire_timer -= delta
