@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cy1yu6rrvbapd"]
+[gd_scene load_steps=7 format=3 uid="uid://cy1yu6rrvbapd"]
 
 [ext_resource type="Script" uid="uid://3cfvju3ucufs" path="res://Scripts/player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://dk3bolnmposou" path="res://Sprites/sprite_player_quare.png" id="2_cvnsp"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6t5aa"]
 size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vgqql"]
+radius = 111.44954
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 2
@@ -27,3 +30,10 @@ metadata/_custom_type_script = "uid://dtiqh1xoxjvlq"
 
 [node name="WeaponManager" type="Node2D" parent="."]
 script = ExtResource("4_vgqql")
+
+[node name="CollectionMagnet" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectionMagnet"]
+shape = SubResource("CircleShape2D_vgqql")

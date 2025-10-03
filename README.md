@@ -8,6 +8,10 @@ Enemy : Layer 2 Mask 1
 enemy's collision area is used for both hurtbox and hitbox.
 Projectile (by player) : Layer 3 Mask 2
 projectile's collision area is used for hitbox only.
+XPdrop : Layer 4 Mask 1
+check if it actually touches the player.
+PlayerCollectionArea : Layer 5(?) Mask 4
+used for collecting things like XPdrop. Pulls things like magnet.
 
 Todo : seperate every hitbox and hurtbox into sibling Area2D nodes.
 🎮 Player Scene Example
