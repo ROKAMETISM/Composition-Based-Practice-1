@@ -12,3 +12,11 @@ func _process(delta: float) -> void:
 			look_at(player.global_position)
 			velocity = Vector2(speed, 0.0).rotated(rotation)
 	position += velocity * delta
+
+
+
+func _on_body_entered(body: Node2D) -> void:
+	#player has contacted this xp.
+	if body == player:
+		body.add_xp(xp_amount)
+		queue_free()
