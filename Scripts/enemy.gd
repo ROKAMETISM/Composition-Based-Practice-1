@@ -4,6 +4,7 @@
 @export var enemy_max_hp := enemy_initial_hp
 @export var enemy_current_hp := enemy_max_hp
 var player
+const XPDROP = preload("uid://diqqkwgfjw1to")
 
 func _ready() -> void:
 	var hpcomponent = $HPComponent
@@ -18,6 +19,10 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func _on_died() -> void:
+	var new_xp = XPDROP.instantiate()
+	new_xp.global_position = global_position
+	new_xp.player = player
+	get_tree().current_scene.add_child(new_xp)
 	queue_free()
 
 @abstract func enemy_ai() -> void

@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://diqqkwgfjw1to"]
+[gd_scene load_steps=4 format=3 uid="uid://diqqkwgfjw1to"]
 
 [ext_resource type="Texture2D" uid="uid://bpahhk0hpc6on" path="res://Sprites/sprite_xpdrop_simple.png" id="1_dcy4q"]
+[ext_resource type="Script" uid="uid://dm3bmhkim07vo" path="res://Scripts/xp_drop.gd" id="1_woou3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_woou3"]
 radius = 6.0
 
 [node name="XPDrop" type="Area2D"]
 collision_layer = 8
+script = ExtResource("1_woou3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_dcy4q")
