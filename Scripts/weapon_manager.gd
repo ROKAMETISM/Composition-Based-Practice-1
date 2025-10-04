@@ -8,6 +8,7 @@ func _ready() -> void:
 	weapons.append(preload("res://Scripts/weapon_shotgun.gd").new())
 	
 	for weapon in weapons:
+		add_child(weapon)
 		weapon.tree_current_scene = get_tree().current_scene
 		weapon.player = get_parent()
 		for upgrade in weapon.upgrades.keys():

@@ -3,15 +3,19 @@ extends CharacterBody2D
 @export var speed := 200.0
 @export var player_initial_hp := 100
 @export var player_max_hp := player_initial_hp
-@export var player_current_hp := player_max_hp
 var current_xp := 0
 var level := 1
 var xp_for_next_level := 5
 
+signal player_hp_changed(new_hp)
+signal player_xp_changed(new_xp)
+signal player_level_changed(new_level)
+
 func _ready() -> void:
 	var hpcomponent = $HPComponent
 	hpcomponent.set_max_hp(player_max_hp)
-	hpcomponent.set_current_hp(player_current_hp)
+	hpcomponent.set_current_hp(player_max_hp)
+	hpcomponent.connect("current_hp_changed", hp_updated)
 
 func _process(delta: float) -> void:
 	var input_vector = Vector2(int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left")), 
@@ -25,9 +29,11 @@ func add_xp(xp_amount : int) -> void:
 	while current_xp >= xp_for_next_level:
 		current_xp -= xp_for_next_level
 		level_up()
+	player_xp_changed.emit(current_xp)
 
 func level_up() -> void:
 	level += 1
+	player_level_changed.emit(level)
 	xp_for_next_level += 1
 	print("Level up! current level : {lvl}".format({"lvl" : level}))
 	var copy = $WeaponManager.available_upgrades.duplicate()
@@ -36,3 +42,6 @@ func level_up() -> void:
 	var rand_num = randi_range(0, 3)
 	print("picked upgrades : " + str(picked_upgrades))
 	print("picked num : " + str(rand_num))
+	
+func hp_updated(current_hp, hp_delta) -> void:
+	player_hp_changed.emit(current_hp)
