@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Composition Based Practice 1"
-run/main_scene="uid://bejba3b2jdo48"
+run/main_scene="uid://dgr0dd1dach8x"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://Sprites/icon.svg"
 
