@@ -7,8 +7,8 @@ var current_xp := 0
 var level := 1
 var xp_for_next_level := 5
 
-signal player_hp_changed(new_hp)
-signal player_xp_changed(new_xp)
+signal player_hp_changed(new_hp, hp_max)
+signal player_xp_changed(new_xp, xp_max)
 signal player_level_changed(new_level)
 
 func _ready() -> void:
@@ -16,6 +16,10 @@ func _ready() -> void:
 	hpcomponent.set_max_hp(player_max_hp)
 	hpcomponent.set_current_hp(player_max_hp)
 	hpcomponent.connect("current_hp_changed", hp_updated)
+	player_xp_changed.emit(current_xp, xp_for_next_level)
+	player_hp_changed.emit(player_max_hp, player_max_hp)
+	player_level_changed.emit(level)
+	
 
 func _process(delta: float) -> void:
 	var input_vector = Vector2(int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left")), 
@@ -29,7 +33,7 @@ func add_xp(xp_amount : int) -> void:
 	while current_xp >= xp_for_next_level:
 		current_xp -= xp_for_next_level
 		level_up()
-	player_xp_changed.emit(current_xp)
+	player_xp_changed.emit(current_xp, xp_for_next_level)
 
 func level_up() -> void:
 	level += 1
@@ -44,4 +48,4 @@ func level_up() -> void:
 	print("picked num : " + str(rand_num))
 	
 func hp_updated(current_hp, hp_delta) -> void:
-	player_hp_changed.emit(current_hp)
+	player_hp_changed.emit(current_hp, player_max_hp)
