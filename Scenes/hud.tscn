@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ebsl77nbjexh"]
+[gd_scene load_steps=3 format=3 uid="uid://ebsl77nbjexh"]
 
 [ext_resource type="Script" uid="uid://bqvdviukqfjac" path="res://Scripts/hud.gd" id="1_e0onf"]
+[ext_resource type="Theme" uid="uid://bb5gfkuix4cwx" path="res://GameTheme.tres" id="2_fccik"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -17,6 +18,9 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 27.0
 grow_horizontal = 2
+theme = ExtResource("2_fccik")
+value = 100.0
+show_percentage = false
 
 [node name="XPBar" type="ProgressBar" parent="."]
 layout_mode = 1
