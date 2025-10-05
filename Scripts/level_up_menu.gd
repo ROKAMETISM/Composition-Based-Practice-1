@@ -15,6 +15,10 @@ func show_upgrades(upgrade_choices: Array):
 	for choice in upgrade_choices:
 		var card = upgrade_card_scene.instantiate()
 		card.set_upgrade_data(i, choice)  # a function you define in UpgradeCard.gd
+		card.pressed.connect(upgrade_chosen.bind(i))
 		card_container.add_child(card)
 		i += 1
 	get_tree().paused = true  # optional pause
+
+func upgrade_chosen(index) -> void:
+	print(index)
