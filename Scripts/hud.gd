@@ -10,8 +10,3 @@ func update_xp(new_xp, xp_max) -> void:
 
 func update_level(new_level) -> void:
 	$LevelLabel.text = "Level : " + str(new_level)
-
-func _process(delta: float) -> void:
-	print($HPBar.value)
-	print($HPBar.max_value)
-	print("_")

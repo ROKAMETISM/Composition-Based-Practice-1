@@ -49,3 +49,7 @@ func level_up() -> void:
 	
 func hp_updated(current_hp, hp_delta) -> void:
 	player_hp_changed.emit(current_hp, player_max_hp)
+
+func apply_upgrade(upgrade_data) -> void:
+	upgrade_data[0].upgrades[upgrade_data[1]] += 1
+	print(str(upgrade_data[0].upgrades))
