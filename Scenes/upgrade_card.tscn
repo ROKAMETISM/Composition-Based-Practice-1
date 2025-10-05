@@ -1,11 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyorv468553vi"]
+[gd_scene load_steps=3 format=3 uid="uid://cyorv468553vi"]
 
 [ext_resource type="Theme" uid="uid://g6na1d3fpjv7" path="res://upgrade_card_theme.tres" id="1_7wruj"]
+[ext_resource type="Script" uid="uid://b6lql052lxwkq" path="res://Scripts/upgrade_card.gd" id="2_5at7e"]
 
 [node name="UpgradeCard" type="Button"]
+custom_minimum_size = Vector2(150, 220)
 offset_right = 150.0
 offset_bottom = 220.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_7wruj")
 text = "UpgradeName"
+script = ExtResource("2_5at7e")

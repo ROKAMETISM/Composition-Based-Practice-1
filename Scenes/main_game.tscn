@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgr0dd1dach8x"]
+[gd_scene load_steps=6 format=3 uid="uid://dgr0dd1dach8x"]
 
 [ext_resource type="PackedScene" uid="uid://bejba3b2jdo48" path="res://Scenes/level.tscn" id="1_l756w"]
 [ext_resource type="Script" uid="uid://cf1im1bh3u7tx" path="res://Scripts/main_game.gd" id="1_pu3va"]
 [ext_resource type="PackedScene" uid="uid://ebsl77nbjexh" path="res://Scenes/hud.tscn" id="3_0e3vx"]
 [ext_resource type="Script" uid="uid://dm1nr0e8rwjhf" path="res://Scripts/ui.gd" id="3_6j5ir"]
+[ext_resource type="Script" uid="uid://cq4brj33rip5r" path="res://Scripts/menu.gd" id="5_mgc0q"]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_pu3va")
@@ -24,3 +25,4 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("5_mgc0q")

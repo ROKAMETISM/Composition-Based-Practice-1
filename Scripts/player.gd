@@ -3,13 +3,14 @@ extends CharacterBody2D
 @export var speed := 200.0
 @export var player_initial_hp := 100
 @export var player_max_hp := player_initial_hp
-var current_xp := 0
+var current_xp := 4
 var level := 1
 var xp_for_next_level := 5
 
 signal player_hp_changed(new_hp, hp_max)
 signal player_xp_changed(new_xp, xp_max)
 signal player_level_changed(new_level)
+signal upgrade_choices(upgrades : Array)
 
 func _ready() -> void:
 	var hpcomponent = $HPComponent
@@ -43,9 +44,8 @@ func level_up() -> void:
 	var copy = $WeaponManager.available_upgrades.duplicate()
 	copy.shuffle()
 	var picked_upgrades = copy.slice(0, 3)
-	var rand_num = randi_range(0, 3)
 	print("picked upgrades : " + str(picked_upgrades))
-	print("picked num : " + str(rand_num))
+	upgrade_choices.emit(picked_upgrades)
 	
 func hp_updated(current_hp, hp_delta) -> void:
 	player_hp_changed.emit(current_hp, player_max_hp)
