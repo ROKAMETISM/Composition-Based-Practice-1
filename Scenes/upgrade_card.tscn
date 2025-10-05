@@ -1,9 +1,11 @@
-[gd_scene format=3 uid="uid://cyorv468553vi"]
+[gd_scene load_steps=2 format=3 uid="uid://cyorv468553vi"]
+
+[ext_resource type="Theme" uid="uid://g6na1d3fpjv7" path="res://upgrade_card_theme.tres" id="1_7wruj"]
 
 [node name="UpgradeCard" type="Button"]
-anchors_preset = -1
 offset_right = 150.0
 offset_bottom = 220.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_7wruj")
 text = "UpgradeName"

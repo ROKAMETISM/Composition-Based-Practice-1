@@ -38,7 +38,6 @@ offset_bottom = 27.0
 grow_horizontal = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_fccik")
 theme_override_styles/fill = SubResource("StyleBoxFlat_bjfho")
-value = 50.0
 
 [node name="LevelLabel" type="Label" parent="."]
 layout_mode = 1
