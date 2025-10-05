@@ -5,4 +5,16 @@ extends Control
 @onready var card_container = $HBoxContainer
 
 func _ready():
-	visible = false  # hidden by default until level-up happens
+	pass
+
+func show_upgrades(upgrade_choices: Array):
+	# Clear any existing cards
+	for c in card_container.get_children():
+		c.queue_free()
+
+	# Spawn new cards
+	for choice in upgrade_choices:
+		var card = upgrade_card_scene.instantiate()
+		card.set_upgrade_data(choice)  # a function you define in UpgradeCard.gd
+		card_container.add_child(card)
+	get_tree().paused = true  # optional pause
