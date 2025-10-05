@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ebsl77nbjexh"]
+[gd_scene load_steps=5 format=3 uid="uid://ebsl77nbjexh"]
 
 [ext_resource type="Script" uid="uid://bqvdviukqfjac" path="res://Scripts/hud.gd" id="1_e0onf"]
 [ext_resource type="Theme" uid="uid://bb5gfkuix4cwx" path="res://GameTheme.tres" id="2_fccik"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fccik"]
+bg_color = Color(0, 0.5019608, 0.5019608, 0.2509804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjfho"]
+bg_color = Color(0, 1, 1, 0.8509804)
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -30,6 +36,9 @@ anchor_right = 1.0
 anchor_bottom = 0.058
 offset_bottom = 27.0
 grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_fccik")
+theme_override_styles/fill = SubResource("StyleBoxFlat_bjfho")
+value = 50.0
 
 [node name="LevelLabel" type="Label" parent="."]
 layout_mode = 1
