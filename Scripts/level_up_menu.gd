@@ -4,8 +4,6 @@ extends Control
 
 @onready var card_container = $HBoxContainer
 
-func _ready():
-	pass
 
 func show_upgrades(upgrade_choices: Array):
 	# Clear any existing cards
