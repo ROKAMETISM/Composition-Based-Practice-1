@@ -6,7 +6,7 @@ var weapon_name = "Shotgun"
 @export var base_projectile_damage := 30
 var fire_timer := base_fire_interval
 const SHOTGUN_PROJECTILE = preload("res://Scenes/projectile_shotgun.tscn")
-var base_projectile_speed := 400.0
+var base_projectile_speed := 300.0
 var base_pellets := 5
 var spread_angle := deg_to_rad(10.0)
 var tree_current_scene
