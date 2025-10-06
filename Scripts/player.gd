@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var speed := 200.0
 @export var player_initial_hp := 100
 @export var player_max_hp := player_initial_hp
-var current_xp := 4
+var current_xp := 0
 var level := 1
 var xp_for_next_level := 5
 

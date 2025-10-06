@@ -23,4 +23,4 @@ func _on_timer_timeout(enemy_type) -> void:
 	var rand_vec = Vector2(randi_range(spawn_distance_range.x, spawn_distance_range.y), 0).rotated(randf_range(0, 2*PI))
 	enemy.player = player
 	enemy.global_position = player_pos + rand_vec
-	get_parent().add_child(enemy)
+	get_tree().current_scene.add_child(enemy)

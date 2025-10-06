@@ -11,7 +11,7 @@ func _ready() -> void:
 	enemy_spawn_distance_range[ENEMY_SLOW] = Vector2(200, 400)
 	
 	enemy_spawn_intervals[ENEMY_FAST] = 0.76
-	enemy_spawn_distance_range[ENEMY_FAST] = Vector2(300, 600)
+	enemy_spawn_distance_range[ENEMY_FAST] = Vector2(240, 400)
 	
 
 func get_spawn_interval(enemy_type) -> float:
