@@ -1,12 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpqmkss44wd6f"]
+[gd_scene load_steps=5 format=3 uid="uid://cpqmkss44wd6f"]
 
 [ext_resource type="Script" uid="uid://dtiqh1xoxjvlq" path="res://Scripts/hp_component.gd" id="2_1f0kj"]
+[ext_resource type="Script" uid="uid://ooi543q70gvm" path="res://Scripts/hitbox.gd" id="2_afpow"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f0kj"]
 radius = 13.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_hghv2"]
+radius = 14.035668
+
 [node name="Enemy" type="CharacterBody2D" groups=["Enemies"]]
 collision_layer = 2
+collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
@@ -16,3 +21,10 @@ shape = SubResource("CircleShape2D_1f0kj")
 [node name="HPComponent" type="Node" parent="."]
 script = ExtResource("2_1f0kj")
 metadata/_custom_type_script = "uid://dtiqh1xoxjvlq"
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("2_afpow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_hghv2")

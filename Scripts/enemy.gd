@@ -3,6 +3,7 @@
 @export var enemy_initial_hp := 100
 @export var enemy_max_hp := enemy_initial_hp
 @export var enemy_current_hp := enemy_max_hp
+@export var enemy_damage := 10
 var player
 const XPDROP = preload("uid://diqqkwgfjw1to")
 

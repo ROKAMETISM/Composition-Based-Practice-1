@@ -9,6 +9,7 @@ func _ready() -> void:
 	enemy_initial_hp = 60
 	enemy_max_hp = enemy_initial_hp
 	enemy_current_hp = enemy_max_hp
+	enemy_damage = 8
 	var hpcomponent = $HPComponent
 	hpcomponent.set_max_hp(enemy_max_hp)
 	hpcomponent.set_current_hp(enemy_current_hp)
