@@ -2,7 +2,7 @@ extends Control
 
 var inst_LevelUpMenu
 const LEVELUPMENU = preload("uid://dknot45ve4a62")
-const GAMEOVERMENU = preload("uid://dknot45ve4a62")
+const GAMEOVERMENU = preload("uid://bd1y2dtap7x2b")
 
 func create_level_up(picked_upgrades : Array) -> void:
 	inst_LevelUpMenu = LEVELUPMENU.instantiate()
