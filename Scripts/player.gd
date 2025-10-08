@@ -17,7 +17,6 @@ func _ready() -> void:
 	var hpcomponent = $HPComponent
 	hpcomponent.set_max_hp(player_max_hp)
 	hpcomponent.set_current_hp(player_max_hp)
-	hpcomponent.set_current_hp(1)
 	hpcomponent.connect("current_hp_changed", hp_updated)
 	hpcomponent.connect("died", _on_died)
 	player_xp_changed.emit(current_xp, xp_for_next_level)
