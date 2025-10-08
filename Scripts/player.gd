@@ -17,6 +17,7 @@ func _ready() -> void:
 	hpcomponent.set_max_hp(player_max_hp)
 	hpcomponent.set_current_hp(player_max_hp)
 	hpcomponent.connect("current_hp_changed", hp_updated)
+	hpcomponent.connect("died", _on_died)
 	player_xp_changed.emit(current_xp, xp_for_next_level)
 	player_hp_changed.emit(player_max_hp, player_max_hp)
 	player_level_changed.emit(level)
@@ -52,3 +53,6 @@ func hp_updated(current_hp, hp_delta) -> void:
 func apply_upgrade(upgrade_data) -> void:
 	upgrade_data[0].upgrades[upgrade_data[1]] += 1
 	print(str(upgrade_data[0].upgrades))
+
+func _on_died() -> void:
+	get_tree().quit()
