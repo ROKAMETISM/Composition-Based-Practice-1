@@ -3,7 +3,7 @@ var enemies : Array
 var enemy_timers : Array
 @export var spawn_enemies := true
 var player
-
+var player_pos := Vector2.ZERO
 
 
 func init_timers() -> void:
@@ -17,8 +17,11 @@ func init_timers() -> void:
 		
 
 func _on_timer_timeout(enemy_type) -> void:
+	if not player:
+		return
 	var enemy = enemy_type.instantiate()
-	var player_pos = player.global_position
+	if player:
+		player_pos = player.global_position
 	var spawn_distance_range = $EnemySpawndata.get_spawn_distance_range(enemy_type)
 	var rand_vec = Vector2(randi_range(spawn_distance_range.x, spawn_distance_range.y), 0).rotated(randf_range(0, 2*PI))
 	enemy.player = player

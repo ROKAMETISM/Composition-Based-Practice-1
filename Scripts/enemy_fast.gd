@@ -1,6 +1,8 @@
 extends "res://Scripts/enemy.gd"
 
 func enemy_ai() -> void:
+	if not player:
+		return
 	look_at(player.global_position)
 	velocity = Vector2(120.0, 0).rotated(rotation)
 
