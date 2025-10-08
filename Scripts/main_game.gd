@@ -9,3 +9,4 @@ func _ready():
 	player.player_xp_changed.connect(hud.update_xp)
 	player.player_level_changed.connect(hud.update_level)
 	player.upgrade_choices.connect(menu.create_level_up)
+	player.game_over.connect(menu.create_game_over)

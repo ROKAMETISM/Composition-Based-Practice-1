@@ -11,6 +11,7 @@ signal player_hp_changed(new_hp, hp_max)
 signal player_xp_changed(new_xp, xp_max)
 signal player_level_changed(new_level)
 signal upgrade_choices(upgrades : Array)
+signal game_over
 
 func _ready() -> void:
 	var hpcomponent = $HPComponent
@@ -55,4 +56,4 @@ func apply_upgrade(upgrade_data) -> void:
 	print(str(upgrade_data[0].upgrades))
 
 func _on_died() -> void:
-	get_tree().quit()
+	game_over.emit()
