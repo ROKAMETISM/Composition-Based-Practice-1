@@ -1,7 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bd1y2dtap7x2b"]
 
-[ext_resource type="Theme" uid="uid://bgyqvfqb8vchk" path="res://level_up_menu_theme.tres" id="1_arass"]
 [ext_resource type="Script" uid="uid://d2cd41ikl8q3n" path="res://Scripts/game_over_menu.gd" id="1_i22rp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arass"]
+bg_color = Color(0.3529412, 0, 0, 0.36078432)
 
 [sub_resource type="SystemFont" id="SystemFont_arass"]
 font_names = PackedStringArray("Arial")
@@ -20,14 +22,13 @@ grow_vertical = 2
 script = ExtResource("1_i22rp")
 
 [node name="Background" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_arass")
+theme_override_styles/panel = SubResource("StyleBoxFlat_arass")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
