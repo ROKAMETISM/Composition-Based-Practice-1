@@ -57,3 +57,4 @@ func apply_upgrade(upgrade_data) -> void:
 
 func _on_died() -> void:
 	game_over.emit()
+	queue_free()

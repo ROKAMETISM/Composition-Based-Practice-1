@@ -1,7 +1,5 @@
 extends Control
 
-func _ready() -> void:
-	get_tree().paused = true
 
 
 func _on_restart_button_pressed() -> void:
