@@ -30,8 +30,8 @@ script = ExtResource("5_mgc0q")
 [node name="Joystick" parent="UI" instance=ExtResource("6_bb2iq")]
 anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.75
+anchor_top = 0.8
 anchor_right = 0.5
-anchor_bottom = 0.75
+anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 0
