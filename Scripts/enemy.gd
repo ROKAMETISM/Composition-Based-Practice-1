@@ -22,7 +22,7 @@ func _on_died() -> void:
 	var new_xp = XPDROP.instantiate()
 	new_xp.global_position = global_position
 	new_xp.player = player
-	get_tree().current_scene.add_child(new_xp)
+	get_tree().current_scene.call_deferred("add_child", new_xp)
 	queue_free()
 
 @abstract func enemy_ai() -> void
