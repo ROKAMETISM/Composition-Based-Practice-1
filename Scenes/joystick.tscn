@@ -1,25 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cias2a54mupt8"]
+[gd_scene load_steps=5 format=3 uid="uid://cias2a54mupt8"]
 
 [ext_resource type="Script" uid="uid://m1jowdtur5fx" path="res://Scripts/joystick.gd" id="1_626ei"]
 [ext_resource type="Texture2D" uid="uid://dtsiermvawu4s" path="res://Sprites/sprite_joystick_ring.png" id="1_ccjgu"]
 [ext_resource type="Texture2D" uid="uid://dy5rlw2k738ca" path="res://Sprites/sprite_joystick_circle.png" id="2_626ei"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_626ei"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmey2"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uvkn4"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4h880"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_txiae"]
-
-[sub_resource type="Theme" id="Theme_626ei"]
-Button/styles/disabled = SubResource("StyleBoxEmpty_626ei")
-Button/styles/focus = SubResource("StyleBoxEmpty_bmey2")
-Button/styles/hover = SubResource("StyleBoxEmpty_uvkn4")
-Button/styles/normal = SubResource("StyleBoxEmpty_4h880")
-Button/styles/pressed = SubResource("StyleBoxEmpty_txiae")
+[ext_resource type="Theme" uid="uid://3pc50snggc7u" path="res://joystick_theme.tres" id="3_bmey2"]
 
 [node name="Joystick" type="Control"]
 layout_mode = 3
@@ -54,6 +38,9 @@ offset_right = 142.05493
 offset_bottom = 139.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_626ei")
+theme = ExtResource("3_bmey2")
 icon = ExtResource("1_ccjgu")
 icon_alignment = 1
+
+[connection signal="button_down" from="Base" to="." method="_on_base_button_down"]
+[connection signal="button_up" from="Base" to="." method="_on_base_button_up"]
