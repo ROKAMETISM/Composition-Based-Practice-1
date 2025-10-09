@@ -1,28 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://cias2a54mupt8"]
+[gd_scene load_steps=4 format=3 uid="uid://cias2a54mupt8"]
 
+[ext_resource type="Script" uid="uid://m1jowdtur5fx" path="res://Scripts/joystick.gd" id="1_626ei"]
 [ext_resource type="Texture2D" uid="uid://dtsiermvawu4s" path="res://Sprites/sprite_joystick_ring.png" id="1_ccjgu"]
 [ext_resource type="Texture2D" uid="uid://dy5rlw2k738ca" path="res://Sprites/sprite_joystick_circle.png" id="2_626ei"]
 
 [node name="Joystick" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_626ei")
 
-[node name="Button" type="Button" parent="."]
+[node name="Base" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -68.0
-offset_top = -68.0
-offset_right = 68.0
-offset_bottom = 68.0
+offset_left = -142.05493
+offset_top = -139.0
+offset_right = 142.05493
+offset_bottom = 139.0
 grow_horizontal = 2
 grow_vertical = 2
 icon = ExtResource("1_ccjgu")
+icon_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Knob" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
