@@ -6,6 +6,8 @@ extends CharacterBody2D
 var current_xp := 0
 var level := 1
 var xp_for_next_level := 5
+var input_joystick_pressing := false
+var input_joystick_angle := 0.0
 
 signal player_hp_changed(new_hp, hp_max)
 signal player_xp_changed(new_xp, xp_max)
@@ -27,6 +29,8 @@ func _process(delta: float) -> void:
 	var input_vector = Vector2(int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left")), 
 								int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up")))
 	velocity = input_vector.normalized() * speed
+	if input_joystick_pressing:
+		velocity = Vector2.from_angle(input_joystick_angle)*speed
 	move_and_slide()
 
 func add_xp(xp_amount : int) -> void:
@@ -58,3 +62,8 @@ func apply_upgrade(upgrade_data) -> void:
 func _on_died() -> void:
 	game_over.emit()
 	queue_free()
+
+func set_joystick_pressing(pressing:bool) -> void:
+	input_joystick_pressing = pressing
+func set_joystick_angle(angle:float) -> void:
+	input_joystick_angle = angle
