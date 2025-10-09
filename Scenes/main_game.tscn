@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgr0dd1dach8x"]
+[gd_scene load_steps=7 format=3 uid="uid://dgr0dd1dach8x"]
 
 [ext_resource type="PackedScene" uid="uid://bejba3b2jdo48" path="res://Scenes/level.tscn" id="1_l756w"]
 [ext_resource type="Script" uid="uid://cf1im1bh3u7tx" path="res://Scripts/main_game.gd" id="1_pu3va"]
 [ext_resource type="PackedScene" uid="uid://ebsl77nbjexh" path="res://Scenes/hud.tscn" id="3_0e3vx"]
 [ext_resource type="Script" uid="uid://dm1nr0e8rwjhf" path="res://Scripts/ui.gd" id="3_6j5ir"]
 [ext_resource type="Script" uid="uid://cq4brj33rip5r" path="res://Scripts/menu.gd" id="5_mgc0q"]
+[ext_resource type="PackedScene" uid="uid://cias2a54mupt8" path="res://Scenes/joystick.tscn" id="6_bb2iq"]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_pu3va")
@@ -25,3 +26,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_mgc0q")
+
+[node name="Joystick" parent="UI" instance=ExtResource("6_bb2iq")]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.75
+anchor_right = 0.5
+anchor_bottom = 0.75
+grow_horizontal = 2
+grow_vertical = 0
